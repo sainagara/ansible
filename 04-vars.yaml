@@ -1,5 +1,5 @@
 - name: demo on play level variables
-  host: local
+  hosts: local
   vars:
     NAME: "Sai"
     ROLE: "AWS DEvOps Engineer"
