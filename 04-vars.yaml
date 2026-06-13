@@ -1,0 +1,12 @@
+- name: demo on play level variables
+  host: local
+  vars:
+    NAME: "Sai"
+    ROLE: "AWS DEvOps Engineer"
+    LOCATION: "UK"
+  tasks:
+  - name: printing the information
+    debug :
+      msg: "{{NAME} is working as a {{ROLE}} in {{LOCATION}}}"
+  
+
