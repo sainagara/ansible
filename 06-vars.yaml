@@ -1,0 +1,9 @@
+- name: demo on vars files
+  hosts: localhost
+  connection: local
+  vars_files:
+  - item-details.yaml
+  tasks:
+  - name: info about item
+    debug:
+      msg: "Thank you for ordering {{ITEM_NAME}} from {{RESTRAUNT_NAME}}, your order amount is {{PRICE}} and we will serve in {{PREPERATION_TIME_IN_MINUTES}} minutes"

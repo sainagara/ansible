@@ -3,12 +3,12 @@
   connection: local
   vars:
     NAME: "Sai"
-    ROLE: "AWS DEvOps Engineer"
+    ROLE: "AWS DevOps Engineer"
     LOCATION: "UK"
   tasks:
-  - name: task level variables
+  - name: print variables information
     vars:
       EXPERIENCE: 5
     debug:
-      msg: "{{NAME}} is working as a {{ROLE}} with {{EXPERIENCE}} years experience in {{LOCATION}} "
+      msg: "{{NAME}} is working as a {{ROLE}} with {{EXPERIENCE}} years of experience in {{LOCATION}} "
     
