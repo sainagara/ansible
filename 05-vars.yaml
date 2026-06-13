@@ -1,0 +1,14 @@
+- name: Demo on task Level variables
+  hosts: localhost
+  connection: local
+  vars:
+    NAME: "Sai"
+    ROLE: "AWS DEvOps Engineer"
+    LOCATION: "UK"
+  tasks:
+  - name: task level variables
+    vars:
+      EXPERIENCE: 5
+    debug:
+      msg: "{{NAME}} is working as a {{ROLE}} with {{EXPERIENCE}} years experience in {{LOCATION}} "
+    
