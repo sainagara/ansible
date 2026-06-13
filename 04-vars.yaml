@@ -7,6 +7,6 @@
   tasks:
   - name: printing the information
     debug :
-      msg: "{{NAME} is working as a {{ROLE}} in {{LOCATION}}}"
+      msg: "{{NAME}} is working as a {{ROLE}} in {{LOCATION}}"
   
 
