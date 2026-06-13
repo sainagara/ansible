@@ -6,4 +6,4 @@
   tasks:
   - name: info about item
     debug:
-      msg: "Thank you for ordering {{ITEM_NAME}} from {{RESTRAUNT_NAME}}, your order amount is {{PRICE}} and we will serve in {{PREPERATION_TIME_IN_MINUTES}} minutes"
+      msg: "Thank you for ordering {{ITEM_NAME}} from {{RESTRAUNT_NAME}}, your order amount is {{PRICE}} and we will delivere in {{PREPERATION_TIME_IN_MINUTES}} minutes"

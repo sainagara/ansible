@@ -1,0 +1,15 @@
+- name: demo on prompt
+  hosts: localhost
+  connection: local
+  vars_prompt:
+   - name: email
+     prompt: "please enter your email: "
+     private: false
+    
+   - name: mobile_number
+     prompt: "please eneter your mobile number: "
+     private: true
+  tasks:
+  - name: print information
+    debug:
+      msg: "please verify your email: {{email}} and mobile number: {{mobile_number}}"
