@@ -1,0 +1,5 @@
+- name: ping the server
+  host: frontend
+  taks:
+  - name: ping the server
+    ping:
