@@ -1,0 +1,8 @@
+- name: demo vars from command line
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: print name
+    debug:
+     msh: "Hello {{name}}"
+   
