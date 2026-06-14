@@ -1,0 +1,15 @@
+- name: fetching the service status from ansible facts and if stopped then start
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: gather service facts
+    service_facts:
+  
+  - name: start service if stopped
+    loop:
+    - nginx
+    - mysqld
+    systemd_service:
+     name: "{{item}}"
+     state: started
+    when: ansible_facts.services[item+".service"].state == "stopped"
