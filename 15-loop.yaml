@@ -1,0 +1,17 @@
+- name: demo on loops
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: print tech-stack 
+    debug:
+      msg: "{{item}}"
+    loop:
+    - java
+    - spring boot
+    - mongodb
+    - reactjs
+    - AWS
+    - github actions
+    - docker
+    - kubernetes
+    - grafana
