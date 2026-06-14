@@ -1,0 +1,6 @@
+- name: demo on inventory variables
+  host: frontend
+  tasks:
+  - name: print information
+    debug:
+     msg: "Server-name: {{SERVER_NAME}}, Status: {{STATUS}}, Disk_Utilization:{{Disk_Utilization}}%"

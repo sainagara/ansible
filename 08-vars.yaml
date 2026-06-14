@@ -1,0 +1,6 @@
+- name: demo on inventory variables
+  host: frontend
+  tasks:
+  - name: print information
+    debug:
+     msg: "Hi, i am introduing our new employee {{NAME}}, he is working as {{ROLE}} with {{EXPERIENCE_IN_YEARS}} of EXPERIENCE and he is from {{LOCATION}}"

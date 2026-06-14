@@ -8,7 +8,7 @@
     
    - name: mobile_number
      prompt: "please eneter your mobile number: "
-     private: true
+     private: false
   tasks:
   - name: print information
     debug:
