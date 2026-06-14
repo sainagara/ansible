@@ -3,4 +3,4 @@
   tasks:
   - name: print information
     debug:
-     msg: "Server-name: {{SERVER_NAME}}, Status: {{STATUS}}, Disk_Utilization:{{Disk_Utilization}}%"
+     msg: "Server-name: {{SERVER_NAME}}, Status: {{STATUS}}, Disk_Utilization:{{DISK_USED}}%"
