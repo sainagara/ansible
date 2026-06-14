@@ -5,15 +5,11 @@
   - name: gather service facts
     service_facts:
   
-  - name: print all services facts
-    debug:
-      var: ansible_facts.services
-  
   - name: start service if stopped
     loop:
     - nginx
     - mysqld
-    when: ansible_facts.services[item+".service"].state == "stopped"
+    when: ansible_facts.services[item+".service"].state != "running"
     systemd_service:
        name: "{{item}}"
        state: started
