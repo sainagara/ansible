@@ -1,0 +1,17 @@
+- name: print even or odd number
+  hosts: localhost
+  connection: local
+  vars_prompt:
+  - name: num
+    prompt: "plese enter the number to validate even or odd"
+    private: false
+  tasks: 
+  - name: validate even or not and print if it's even
+    when: num%2 == 0
+    debug:
+      msg: "The Given number: {{}} is even number"
+  - name: validate odd number or not and print if it's odd
+    when: num%2 == 1
+    debug:
+      msg: "The Given number: {{}} is odd number"
+
