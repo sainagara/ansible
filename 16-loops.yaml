@@ -1,0 +1,14 @@
+- name: install packages
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: install packages
+    debug:
+      msg: "Installing {{item}}"
+    pacakge:
+      name: "{{item}}"
+      state: present
+    loop:
+    - nginx
+    - mysql-Server
+    - nodejs
