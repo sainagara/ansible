@@ -9,9 +9,9 @@
   - name: validate age and print
     when: age | int > 18
     debug:
-      msg: "Your age is {{age}} above 18, so allowed to vote"
+      msg: "Your age {{age}} is above 18, so allowed to vote"
   
   - name: validate age and print
     when: age | int < 18
     debug:
-      msg: "Your age is {{age}} under 18, not allowed to vote"
+      msg: "Your age {{age}} is under 18, not allowed to vote"

@@ -1,0 +1,15 @@
+- name: conditions using ansible facts
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: RedHat Family
+    debug:
+      msg: "OS family is RedHat and package manager is dnf"
+    when: ansible_facts.os_family == "RedHat"
+
+  - name: Debian
+    debug:
+      msg: "Os family is debian and pacakge installer is apt-get"
+    when: ansible_facts.os_family == "Debian"
+
+  
