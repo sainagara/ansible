@@ -4,5 +4,5 @@
   tasks:
   - name: print name
     debug:
-     msh: "Hello {{name}}"
+     msg: "Hello {{name}}"
    
