@@ -7,7 +7,7 @@
   
   - name: print all services facts
     debug:
-    var: ansible_facts.services
+      var: ansible_facts.services
   
   - name: start service if stopped
     loop:
