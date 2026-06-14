@@ -1,5 +1,5 @@
 - name: demo on inventory variables
-  host: frontend
+  hosts: frontend
   tasks:
   - name: print information
     debug:
