@@ -3,8 +3,6 @@
   become: yes
   tasks:
   - name: print installing packages
-    debug:
-      msg: "Installing {{item}}"
     package:
       name: "{{item}}"
       state: present
