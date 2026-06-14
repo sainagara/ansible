@@ -1,7 +1,7 @@
 - name: age verification
   hosts: localhost
   connection: local
-  vars_propmt:
+  vars_prompt:
   - name: age
     prompt: "plesae enetr your age"
     private: false
