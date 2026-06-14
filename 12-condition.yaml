@@ -9,10 +9,10 @@
   - name: validate even or not and print if it's even
     when: num | int % 2 == 0 #type casting to int, by default it's reads as a string
     debug:
-      msg: "The Given number: {{}} is even number"
+      msg: "The Given number: {{num}} is even number"
 
   - name: validate odd number or not and print if it's odd
     when: num | int % 2 != 0
     debug:
-      msg: "The Given number: {{}} is odd number"
+      msg: "The Given number: {{num}} is odd number"
 
