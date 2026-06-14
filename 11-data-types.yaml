@@ -1,0 +1,31 @@
+- name: project details
+  hosts: localhost
+  connection: local
+  vars:
+    PROJECT_NAME: "HandLooms"
+    PROJECT_DURATION_IN_MONTHS: 9
+    IS_MICROSERVICE_APPLICATION: true
+    TECH_STACK:
+    - java
+    - springboot
+    - mysql
+    - kafks
+    - AWS DevOps 
+    - reactjs
+    MORE_DETAILS:
+     team_size: 10
+     ticket_tool: "jira"
+     architecture: "microservic"
+  tasks:
+  - name: project information
+  - debug:
+      msg: |
+        name: {{PROJECT_NAME}}
+        duration: {{PROJECT_DURATION_IN_MONTHS}}
+        is_microservice_application: {{IS_MICROSERVICE_APPLICATION}}
+        tech_stack: {{TECH_STACK}}
+        more_details: {{MORE_DETAILS}}
+
+
+
+   
