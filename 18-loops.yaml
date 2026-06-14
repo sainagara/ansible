@@ -9,7 +9,8 @@
     loop:
     - nginx
     - mysqld
-    systemd_service:
-     name: "{{item}}"
-     state: started
     when: ansible_facts.services[item+".service"].state == "stopped"
+    systemd_service:
+       name: "{{item}}"
+       state: started
+    
