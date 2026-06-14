@@ -1,0 +1,17 @@
+- name: age verification
+  hosts: localhost
+  connection: local
+  vars_propmt:
+  - name: age
+    prompt: "plesae enetr your age"
+    private: false
+  tasks:
+  - name: validate age and print
+    when: age | int > 18
+    debug:
+      msg: "Your age is {{age}} above 18, so allowed to vote"
+  
+  - name: validate age and print
+    when: age | int < 18
+    debug:
+      msg: "Your age is {{age}} under 18, not allowed to vote"
