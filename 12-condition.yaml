@@ -7,11 +7,11 @@
     private: false
   tasks: 
   - name: validate even or not and print if it's even
-    when: num%2 == 0
+    when: {{num}}%2 == 0
     debug:
       msg: "The Given number: {{}} is even number"
   - name: validate odd number or not and print if it's odd
-    when: num%2 == 1
+    when: {{num}}%2 == 1
     debug:
       msg: "The Given number: {{}} is odd number"
 
