@@ -3,11 +3,11 @@
   become: yes
   tasks:
   - name: check service status and if stopped then start
-  loop:
-  - { name: "nginx", state: "stopped" }
-  - { name: "mysqld", state: "stopped" }
-  when: "{{item.state}}" == "stopped"
-  systemd_service:
-   name: "{{item.name}}"
-   state: started
+    loop:
+        - { name: "nginx", state: "stopped" }
+        - { name: "mysqld", state: "stopped" }
+    when: item.state == "stopped"
+    systemd_service:
+      name: "{{item.name}}"
+      state: started
    
