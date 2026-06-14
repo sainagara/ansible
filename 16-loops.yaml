@@ -2,13 +2,13 @@
   hosts: frontend
   become: yes
   tasks:
-  - name: install packages
+  - name: print installing packages
     debug:
       msg: "Installing {{item}}"
-    pacakge:
+    package:
       name: "{{item}}"
       state: present
     loop:
     - nginx
-    - mysql-Server
+    - mysql-server
     - nodejs
