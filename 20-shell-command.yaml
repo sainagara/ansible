@@ -5,22 +5,28 @@
   - name: list the files
     command: ls -l 
     register: files_list
+
+  - name: print files list
     debug:
-      msg: "Files List: {{files_list}}"
+      msg: "Files List: {{files_list.stdout}}"
 
   - name: find the root user from passwd files
     shell: cat /etc/passwd | grep root
     register: root_user_details
+
+  - name: print root user details
     debug:
-      msg: "{{root_user_details}}"
+      msg: "{{root_user_details.stdout}}"
 
   - name: append logs to log files
     shell: sudo dnf install nginx &>> /dev/null
+
+  - name: get nginx version  
     command: nginx -v
     register: nginx_version
 
 
   - name: verifying nginx Version
     debug:
-      msg: "Nginx Version: {{nginx_version}}"
+      msg: "Nginx Version: {{nginx_version.stderr}}"
 
