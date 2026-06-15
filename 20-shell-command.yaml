@@ -19,7 +19,7 @@
       msg: "{{root_user_details.stdout}}"
 
   - name: append logs to log files
-    shell: sudo dnf install nginx &>> /dev/null
+    shell: sudo dnf install nginx -y &>> /dev/null
 
   - name: get nginx version  
     command: nginx -v
