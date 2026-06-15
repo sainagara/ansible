@@ -1,0 +1,15 @@
+- name: demo on error handling
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: check roboshop user exists or not
+    command: id roboshop
+    register: user_output
+
+  - name: print user user output
+    debug:
+      msg: "{{user_output}}"
+
+  - name: create user if not exists
+    when: user_output.rc !=0
+    command: useradd roboshop
