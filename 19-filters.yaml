@@ -1,0 +1,60 @@
+- name: demo on filters
+  hosts: localhost
+  connection: local
+  vars:
+    items: biryani, gobi, lollypop, roti, panner
+    tagMap:
+      item_name: biryani
+      item_price: 300
+      prep_time_min: 30
+    restraunt_name: rk_restarunt
+    ip_address: 178.90.78.17
+    tagList: [
+        {
+          "key": "item_name",
+          "value": "biryani"
+
+        },
+        {
+         "key": "item_price",
+          "value": 300
+
+        },
+       {
+         "key": "prep_time_min",
+          "value": 30
+
+       }
+    ]
+  
+  tasks:
+  - name: convert string to to list
+    debug:
+      msg: "items are: {{items | split(',')}}"
+
+  - name: set default value
+    debug:
+      msg: "Set Offer for Every: {{weekend | default('SUNDAY')}}"
+
+  - name: convert map to list
+    debug:
+      msg: "{{ tagMap | map2items }}"
+
+  - name: convert list to map
+    debug:
+      msg: "{{ tagList | items2dict }}"
+
+  - name: convert to uppercase
+    debug:
+      msg: "{{ restraunt_name | upper }}"
+
+  - name: convert to lower case
+    debug:
+      msg: "{{ restraunt_name | lower }}"
+
+  - name: validate ipv4 ip_address
+    debug:
+      msg: {{ ip_address | ansible.utils.ipv4 }}
+
+    
+    
