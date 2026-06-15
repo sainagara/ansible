@@ -1,0 +1,26 @@
+- name: demo on shell vs command
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: list the files
+    command: ls -l 
+    register: files_list
+    debug:
+      msg: "Files List: {{files_list}}"
+
+  - name: find the root user from passwd files
+    shell: cat /etc/passwd | grep root
+    register: root_user_details
+    debug:
+      msg: "{{root_user_details}}"
+
+  - name: append logs to log files
+    shell: sudo dnf install nginx &>> /dev/null
+    command: nginx -v
+    register: nginx_version
+
+
+  - name: verifying nginx Version
+    debug:
+      msg: "Nginx Version: {{nginx_version}}"
+
